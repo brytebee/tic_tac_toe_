@@ -4,10 +4,10 @@
 # !/usr/bin/ruby
 
 puts 'Welcome to TIC TAC TOE game'
-puts "Enter player 1 name: "
-@player_1 = gets.chomp
-puts "Enter player 2 name: "
-@player_2 = gets.chomp
+puts 'Enter player 1 name: '
+@player_one = gets.chomp
+puts 'Enter player 2 name: '
+@player_two = gets.chomp
 
 def new_player
   print "Player 1 select a symbol 'x' or 'o': "
@@ -15,14 +15,13 @@ def new_player
 
   case player_symbol
   when 'x'
-    puts "#{@player_1} shall play with the symbol 'x'\n#{@player_2} shall play with the symbol 'o'"
+    puts "#{@player_one} shall play with the symbol 'x'\n#{@player_two} shall play with the symbol 'o'"
   when 'o'
-    puts "#{@player_1} shall play with the symbol 'o'\n#{@player_2} shall play with the symbol 'x'"
+    puts "#{@player_one} shall play with the symbol 'o'\n#{@player_two} shall play with the symbol 'x'"
   else
     puts "You've entered an invalid symbol, try again!!"
     new_player
   end
-  return @player_1, @player_2
 end
 
 board = %w[1 2 3 4 5 6 7 8 9]
@@ -72,9 +71,9 @@ end
 def win(turn)
   puts 'Game Over!'
   if turn == 'x'
-    puts "#{@player_1} wins!"
+    puts "#{@player_one} wins!"
   else
-    puts "#{@player_2} wins!"
+    puts "#{@player_two} wins!"
   end
 end
 
