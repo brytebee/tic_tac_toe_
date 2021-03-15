@@ -3,20 +3,26 @@
 # rubocop:disable Metrics/MethodLength
 # !/usr/bin/ruby
 
+puts 'Welcome to TIC TAC TOE game'
+puts "Enter player 1 name: "
+@player_1 = gets.chomp
+puts "Enter player 2 name: "
+@player_2 = gets.chomp
+
 def new_player
-  puts 'Welcome to TIC TAC TOE game'
   print "Player 1 select a symbol 'x' or 'o': "
   player_symbol = gets.chomp
 
   case player_symbol
   when 'x'
-    puts "Player 1 shall play with the symbol 'x'\nPlayer 2 shall play with the symbol 'o'"
+    puts "#{@player_1} shall play with the symbol 'x'\n#{@player_2} shall play with the symbol 'o'"
   when 'o'
-    puts "Player 1 shall play with the symbol 'o'\nPlayer 2 shall play with the symbol 'x'"
+    puts "#{@player_1} shall play with the symbol 'o'\n#{@player_2} shall play with the symbol 'x'"
   else
     puts "You've entered an invalid symbol, try again!!"
     new_player
   end
+  return @player_1, @player_2
 end
 
 board = %w[1 2 3 4 5 6 7 8 9]
@@ -65,10 +71,10 @@ end
 
 def win(turn)
   puts 'Game Over!'
-  if turn
-    puts 'Player 1 wins!'
+  if turn == 'x'
+    puts "#{@player_1} wins!"
   else
-    puts 'Player 2 wins!'
+    puts "#{@player_2} wins!"
   end
 end
 
@@ -105,4 +111,4 @@ end
 
 new_player
 move(board, 'o')
-replay
+win('o')
