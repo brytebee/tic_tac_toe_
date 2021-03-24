@@ -30,7 +30,8 @@ class Player
       true
     end
   end
-# rubocop:disable Metrics/MethodLength
+
+  # rubocop:disable Metrics/MethodLength
   def win(array, sign)
     arr = []
     state = false
@@ -43,9 +44,7 @@ class Player
     arr = arr.sort
     win_array.each do |a|
       count = 0
-      a.length.times do |i|
-        count += 1 if arr.include? a[i]
-      end
+      a.length.times { |i| count += 1 if arr.include? a[i] }
       if count == 3
         state = true
         break
@@ -53,7 +52,7 @@ class Player
     end
     state
   end
-# rubocop:enable Metrics/MethodLength
+  # rubocop:enable Metrics/MethodLength
 
   # draw if no wins just print draw
   def draw
