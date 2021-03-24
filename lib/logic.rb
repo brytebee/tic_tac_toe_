@@ -31,7 +31,6 @@ class Player
     end
   end
 
-  # rubocop:disable Metrics/MethodLength
   def win(array, sign)
     arr = []
     state = false
@@ -52,7 +51,6 @@ class Player
     end
     state
   end
-  # rubocop:enable Metrics/MethodLength
 
   # draw if no wins just print draw
   def draw
