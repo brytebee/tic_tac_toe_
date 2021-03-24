@@ -1,5 +1,3 @@
-# frozen_string_literal: false
-
 # Player class
 class Player
   def game_name
@@ -33,7 +31,6 @@ class Player
     end
   end
 
-  # rubocop:disable Metrics/AbcSize, Metrics/MethodLength
   def wins(array, sign)
     puts sign.class
     puts array.class
@@ -58,7 +55,6 @@ class Player
     end
     state
   end
-  # rubocop:enable Metrics/AbcSize, Metrics/MethodLength
 
   # draw if no wins just print draw
   def draw

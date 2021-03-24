@@ -4,7 +4,6 @@ require_relative '../lib/logic'
 player = Player.new
 
 # player sign just valdiate that the use Enter the correct symbol
-# rubocop:disable Metrics/MethodLength
 def players(sign, player)
   state = true
   while state
@@ -18,7 +17,6 @@ def players(sign, player)
   end
   sign
 end
-# rubocop:enable Metrics/MethodLength
 
 # move_check which takes the user input and validate input for number between 1 and 9 and make move on the board
 def move_check(move, array, var, player)

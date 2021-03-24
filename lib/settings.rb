@@ -1,5 +1,3 @@
-# frozen_string_literal: false
-
 #  settings class
 class Settings
   # rubocop:disable Style/StringLiterals
