@@ -43,7 +43,7 @@ while counter < 9
   move = gets.chomp.to_i
   move_check(move, array, sign, player)
   puts playing_board.draw_board(array).to_s
-  if player.wins(array, sign)
+  if player.win(array, sign)
     puts "player #{sign.upcase} wins \u{1F911}"
     break
   end

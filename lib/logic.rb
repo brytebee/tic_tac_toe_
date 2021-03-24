@@ -30,10 +30,8 @@ class Player
       true
     end
   end
-
-  def wins(array, sign)
-    puts sign.class
-    puts array.class
+# rubocop:disable Metrics/MethodLength
+  def win(array, sign)
     arr = []
     state = false
     win_array = [[0, 1, 2], [3, 4, 5], [6, 7, 8], [0, 3, 6], [1, 4, 7], [2, 5, 8], [0, 4, 8], [2, 4, 6]]
@@ -55,6 +53,7 @@ class Player
     end
     state
   end
+# rubocop:enable Metrics/MethodLength
 
   # draw if no wins just print draw
   def draw
