@@ -24,10 +24,10 @@
 - Both players will move their symbols nine time. If none win the game, it's a draw and Game over!.
 
 ## Install
-In a terminal window type gem install RSpec
-Once RSpec install has finished, type RSpec --init
-You will see a folder spec and a file .rspec
-Inside the spec folder you'll see a spec_helper.rb file.
+- In a terminal window type `gem install RSpec`
+- Once RSpec install has finished, `type RSpec --init`
+- You will see a folder spec and a file .rspec
+- Inside the spec folder you'll see a spec_helper.rb file.
 
 ## Run
 inside the repository, there is a RSpec-testing file called enu_test.
@@ -35,9 +35,10 @@ inside the repository, there is a RSpec-testing file called enu_test.
 go to the folder inside your terminal and type RSpec
 
 ## Testing
-> In this project, we used Rspec to test all the methods. do this steps: 1/navigate to "ruby_testing" directory inside the project 2/ run "rspec spec/enu_test.rb"
-
-or just run this command(rspec ruby_testing/spec/enu_test.rb)
+In this project, we used Rspec to test all the methods. do this steps: 
+- [x] Navigate to "ruby_testing" directory inside the project.
+- [x] Run "rspec spec/enu_test.rb"
+- or just run this command(rspec ruby_testing/spec/enu_test.rb)
 
 
 ### Prerequisites
