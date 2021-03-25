@@ -38,6 +38,7 @@ go to the folder inside your terminal and type `RSpec`
 In this project, we used Rspec to test all the methods. do this steps: 
 - [x] Navigate to "ruby_testing" directory inside the project.
 - [x] Run `rspec spec/enu_test.rb`
+
 - or just run this command `rspec ruby_testing/spec/enu_test.rb`
 
 
