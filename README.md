@@ -14,6 +14,14 @@
 ![screenshot](/assets/screenshot1.JPG)
 ![screenshot](/assets/screenshot2.JPG)
 ![screenshot](/assets/screenshot3.JPG)
+![screenshot](/assets/screenshot4.JPG)
+
+## Game flow (How to Play)
+
+- First player will be asked to select symbol to play with either X or O.
+- Second player will automatically be assigned with the symbol not selected of X or O above.
+- Players will be moving their symbols on board alternatively targeting to fill three same symbols successive horizontally, vertically or diagonal, to Win.
+- Both players will move their symbols nine time. If none win the game, it's a draw and Game over!.
 
 ## Install
 In a terminal window type gem install RSpec
