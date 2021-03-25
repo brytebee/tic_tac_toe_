@@ -54,7 +54,7 @@ Give a ⭐️ if you like this project!
 ## Acknowledgments
 
 - Appreciations to the TSE's and the Entire Microverse Community
-- This would mot have been positive without help from my stand-up Team, The Sylveons, thanks guys.
+- This would not have been positive without help from my stand-up Team, The Sylveons, thanks guys.
 - To old coding partners I buzzed, your input is well appreciated.
 
 ## 📝 License
