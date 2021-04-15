@@ -1,6 +1,8 @@
-#spec/logic_spec.rb
+# spec/logic_spec.rb
 
 require './lib/logic'
+
+# rubocop:disable Metrics/BlockLength
 
 describe Player do
   describe '#game_name' do
@@ -55,3 +57,4 @@ describe Player do
     end
   end
 end
+# rubocop:enable Metrics/BlockLength
