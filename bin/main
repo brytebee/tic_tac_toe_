@@ -1,0 +1,58 @@
+#!/usr/bin/env ruby
+require_relative '../lib/settings'
+require_relative '../lib/logic'
+player = Player.new
+
+# player sign just valdiate that the use Enter the correct symbol
+def players(sign, player)
+  state = true
+  while state
+    if player.sign_validate(sign)
+      puts "player #{sign.upcase} make your move between 1 - 9"
+      break
+    else
+      puts "Invalid! \nChoose the player 'X' or 'O'"
+      sign = gets.chomp
+    end
+  end
+  sign
+end
+
+# move_check which takes the user input and validate input for number between 1 and 9 and make move on the board
+def move_check(move, array, var, player)
+  state = true
+  while state
+    if player.move_validate(move) && player.index_taken?(move - 1, array)
+      array[move - 1] = var
+      break
+    else
+      puts "Invalid! \nEnter a valid move between 1 - 9"
+      move = gets.chomp.to_i
+    end
+  end
+end
+
+playing_board = Settings.new
+array = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+puts "choose the player 'X' or 'O'"
+sign = gets.chomp.downcase
+sign = players(sign, player)
+
+counter = 0
+while counter < 9
+  move = gets.chomp.to_i
+  move_check(move, array, sign, player)
+  puts playing_board.draw_board(array).to_s
+  if player.win(array, sign)
+    puts "player #{sign.upcase} wins \u{1F911}"
+    break
+  end
+  if counter == 8
+    draw = Player.new
+    draw.draw
+    break
+  end
+  sign = playing_board.switch_user(sign)
+  puts "player #{sign.upcase} make your move between 1 - 9"
+  counter += 1
+end
