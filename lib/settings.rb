@@ -1,5 +1,7 @@
 #  settings class
 class Settings
+  private
+
   # rubocop:disable Style/StringLiterals
   def draw_board(board)
     @show_board = board

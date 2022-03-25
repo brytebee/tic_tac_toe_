@@ -54,7 +54,6 @@ class Player
 
   # draw if no wins just print draw
   def draw
-    puts "It\'s a draw!"
-    puts "Game Ended !! \u{1F61C}"
+    "It\'s a draw! \nGame Ended !! \u{1F61C}"
   end
 end
