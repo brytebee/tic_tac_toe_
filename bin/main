@@ -1,3 +1,113 @@
-#!/usr/bin/ruby
+# frozen_string_literal: false
 
-puts 'hello world!'
+# rubocop:disable Metrics/MethodLength
+# !/usr/bin/ruby
+
+puts 'Welcome to TIC TAC TOE game'
+puts 'Enter player 1 name: '
+@player_one = gets.chomp
+puts 'Enter player 2 name: '
+@player_two = gets.chomp
+
+def new_player
+  print "Player 1 select a symbol 'x' or 'o': "
+  player_symbol = gets.chomp
+
+  case player_symbol
+  when 'x'
+    puts "#{@player_one} shall play with the symbol 'x'\n#{@player_two} shall play with the symbol 'o'"
+  when 'o'
+    puts "#{@player_one} shall play with the symbol 'o'\n#{@player_two} shall play with the symbol 'x'"
+  else
+    puts "You've entered an invalid symbol, try again!!"
+    new_player
+  end
+end
+
+board = %w[1 2 3 4 5 6 7 8 9]
+
+# rubocop:disable Style/StringLiterals
+def display_board(board)
+  puts "||-----------||"
+  puts "|| #{board[0]} | #{board[1]} | #{board[2]} ||"
+  puts "||-----------||"
+  puts "|| #{board[3]} | #{board[4]} | #{board[5]} ||"
+  puts "||-----------||"
+  puts "|| #{board[6]} | #{board[7]} | #{board[8]} ||"
+  puts "||-----------||"
+end
+
+def move(board, player_symbol)
+  move_size = 1
+  while move_size <= 9
+    puts 'Enter an available move between 1 and 9'
+    rotate_player_turn(player_symbol)
+    make_move = player_input(board, player_symbol)
+    board[Integer(make_move) - 1] = player_symbol
+    move_size += 1
+    display_board(board)
+    player_symbol = player_symbol == 'x' ? 'o' : 'x'
+  end
+end
+
+def rotate_player_turn(player_symbol)
+  player_symbol == 'o' ? 'Player 2: Your turn' : 'Player 1: Your turn'
+end
+
+def player_input(board, player_symbol)
+  make_move = gets.chomp.to_i
+  if make_move <= 9 && make_move.positive?
+    if board[make_move - 1] == 'x' || board[make_move - 1] == 'o'
+      puts 'already selected!'
+      move(board, player_symbol)
+    end
+    make_move
+  else
+    puts 'Invalid input: enter number between 1 and 9'
+    move(board, player_symbol)
+  end
+end
+
+def win(turn)
+  puts 'Game Over!'
+  if turn == 'x'
+    puts "#{@player_one} wins!"
+  else
+    puts "#{@player_two} wins!"
+  end
+end
+
+def draw
+  puts 'Game Over!'
+  print 'It\'s a draw'
+end
+
+def game_over
+  puts 'Game Over!'
+end
+
+def replay
+  puts 'Do you want to play again?'
+  puts '- - - "y" for (yes!) "n" for (no!)'
+  reply = gets.chomp
+  puts
+  case reply
+  when 'y'
+    puts 'New game!'
+    new_player
+    # move(board, 'o') Create a new instance of the board
+  when 'n'
+    puts 'Bye!'
+    game_over
+  else
+    puts 'Invalid! Retry with "y" or "n"'
+    replay
+  end
+end
+
+# rubocop:enable Style/StringLiterals
+# rubocop:enable Metrics/MethodLength
+
+new_player
+move(board, 'o')
+win('o')
